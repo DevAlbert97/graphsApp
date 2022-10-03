@@ -1,0 +1,20 @@
+<h1>Redes Sociales mas usadas</h1>
+<hr>
+
+<div class="alert alert-info" *ngIf="chartData.datasets[0].data.length === 0; else divGraph">
+  Cargando datos...
+</div>
+
+<div class="row">
+  <div class="col">
+    <ng-template #divGraph>
+      <div style="display: block;">
+        <canvas baseChart [data]="chartData" 
+                          [options]="barCharOptions" 
+                          [type]="chartType">
+        </canvas>
+      </div>
+      <span class="float-end text-primary">Informacion en billones de usuarios</span>
+    </ng-template>
+  </div>
+</div>
